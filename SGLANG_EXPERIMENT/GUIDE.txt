@@ -1,0 +1,24 @@
+
+
+python3 -m venv .venv-sglang
+source .venv-sglang/bin/activate
+
+python -m pip install -U pip setuptools wheel
+
+env \
+  -u GIT_ASKPASS \
+  -u GIT_ASKPASS_DOMAIN \
+  -u SSH_ASKPASS \
+  -u VSCODE_GIT_ASKPASS_NODE \
+  -u VSCODE_GIT_ASKPASS_MAIN \
+  -u VSCODE_GIT_ASKPASS_EXTRA_ARGS \
+  GIT_TERMINAL_PROMPT=0 \
+  git -c credential.helper= clone https://github.com/sgl-project/sglang.git
+cd sglang
+git checkout a1fe4e30
+
+SGLANG_BUILD_RUST_EXTS=none pip install -e python
+
+
+python -c "import sglang; print(sglang.__version__)"
+python -m sglang.check_env
