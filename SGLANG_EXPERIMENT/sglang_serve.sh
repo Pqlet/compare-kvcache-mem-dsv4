@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 
+# export SGLANG_CACHE_DIR="$(pwd)/.sglang_cache"
+# mkdir -p "$SGLANG_CACHE_DIR"
 
-MODEL="${MODEL:-/models/DeepSeek-V4-Flash-0731}"
+MODEL="${MODEL:-/models/DeepSeek-V4-Flash}"
 PORT="${PORT:-30000}"
 TP="${TP:-8}"
 MEM_FRAC="${MEM_FRAC:-0.85}"
 KV_DTYPE="${KV_DTYPE:-fp8_e4m3}"
 
 export SGLANG_DSV4_COMPRESS_STATE_DTYPE="${SGLANG_DSV4_COMPRESS_STATE_DTYPE:-bf16}"
+
+unset PYTHONPATH
 
 sglang serve \
   --model-path "$MODEL" \

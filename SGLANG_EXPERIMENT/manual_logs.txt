@@ -1,0 +1,166 @@
+(venv) root@k8smr-biglm-nkurdyukov-d-3165022306-task-0:/storage/LEARN_SNIPPETS/compare-kvcache-mem-dsv4/SGLANG_EXPERIMENT# grep -E \
+'DSV4 memory calculation|DSV4 pool sizes|Initialize DeepSeekV4TokenToKVPool|KV Cache is allocated|max_total_num_tokens|Memory pool end' \
+sglang_dsv4.log
+[2026-09-03 10:49:14 TP0] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP0] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP0] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP1] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP1] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP2] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP3] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP2] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP3] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP1] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP3] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP6] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP6] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP7] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP4] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP5] DSV4 memory calculation: bytes_per_full_token=7033.45, available_bytes=45.26 GB, c128_state_fixed=0.33 GB, full_token=6859008
+[2026-09-03 10:49:14 TP7] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP4] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP2] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP5] DSV4 pool sizes: full=6859008, swa=685824, c4=1714752, c128=53586, c4_state=42864, c128_state=0
+[2026-09-03 10:49:14 TP4] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP6] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP5] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP7] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=64 swa_size=685824 c4_size=1714752 c4_logical_size=1714752 c128_size=53586 c4_state_pool_size=42864 c128_state_pool_size=8320
+[2026-09-03 10:49:14 TP1] Memory pool end. avail mem=10.80 GB
+[2026-09-03 10:49:15 TP0] Memory pool end. avail mem=10.84 GB
+[2026-09-03 10:49:15 TP3] Memory pool end. avail mem=10.80 GB
+[2026-09-03 10:49:15 TP2] Memory pool end. avail mem=10.80 GB
+[2026-09-03 10:49:18 TP7] Memory pool end. avail mem=11.03 GB
+[2026-09-03 10:49:18 TP6] Memory pool end. avail mem=10.80 GB
+[2026-09-03 10:49:19 TP5] Memory pool end. avail mem=10.80 GB
+[2026-09-03 10:49:19 TP4] Memory pool end. avail mem=10.80 GB
+[2026-09-03 11:15:44 TP0] max_total_num_tokens=6859008, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=64, context_len=1048576, available_gpu_mem=8.17 GB
+(venv) root@k8smr-biglm-nkurdyukov-d-3165022306-task-0:/storage/LEARN_SNIPPETS/compare-kvcache-mem-dsv4/SGLANG_EXPERIMENT# 
+
+
+(venv) root@k8smr-biglm-nkurdyukov-d-3165022306-task-0:/storage/LEARN_SNIPPETS/compare-kvcache-mem-dsv4/SGLANG_EXPERIMENT# echo $PORT
+(venv) root@k8smr-biglm-nkurdyukov-d-3165022306-task-0:/storage/LEARN_SNIPPETS/compare-kvcache-mem-dsv4/SGLANG_EXPERIMENT# curl -s "http://127.0.0.1:30000/model_info
+" | jq .
+{
+  "model_path": "/models/DeepSeek-V4-Flash",
+  "served_model_name": "/models/DeepSeek-V4-Flash",
+  "tokenizer_path": "/models/DeepSeek-V4-Flash",
+  "is_generation": true,
+  "preferred_sampling_params": null,
+  "weight_version": "default",
+  "load_format": "auto",
+  "reasoning_parser": "deepseek-v4",
+  "tool_call_parser": "deepseekv4",
+  "has_image_understanding": false,
+  "has_audio_understanding": false,
+  "model_type": "deepseek_v4",
+  "architectures": [
+    "DeepseekV4ForCausalLM"
+  ],
+  "embedding": {
+    "family": "none",
+    "task": "none",
+    "execution": "none",
+    "attention": "none",
+    "pooling": "model_defined",
+    "normalize": false,
+    "postprocessor": "none",
+    "tokenizer_special_tokens": "model_default",
+    "supports_dimensions": false,
+    "supports_token_embeddings": false,
+    "supports_multimodal": false,
+    "requires_embedding_flag": false,
+    "auto_enable_embedding": false,
+    "bcg_eligibility": "disabled",
+    "safe_disable_kv_cache": false,
+    "safe_disable_radix_cache": false,
+    "safe_disable_chunked_prefill": false,
+    "enabled": false,
+    "matryoshka_dimensions": [],
+    "bcg": {
+      "prefill_backend": "disabled",
+      "enabled": false,
+      "capture_token_budget": 8192,
+      "capture_batch_sizes": [
+        4,
+        8,
+        12,
+        16,
+        20,
+        24,
+        28,
+        32,
+        48,
+        64,
+        80,
+        96,
+        112,
+        128,
+        144,
+        160,
+        176,
+        192,
+        208,
+        224,
+        240,
+        256,
+        288,
+        320,
+        352,
+        384,
+        416,
+        448,
+        480,
+        512,
+        576,
+        640,
+        704,
+        768,
+        832,
+        896,
+        960,
+        1024,
+        1280,
+        1536,
+        1792,
+        2048,
+        2304,
+        2560,
+        2816,
+        3072,
+        3328,
+        3584,
+        3840,
+        4096,
+        4608,
+        5120,
+        5632,
+        6144,
+        6656,
+        7168,
+        7680,
+        8192
+      ]
+    },
+    "cache": {
+      "kv_cache_disabled": false,
+      "radix_cache_disabled": false,
+      "chunked_prefill_disabled": false
+    }
+  }
+}
+(venv) root@k8smr-biglm-nkurdyukov-d-3165022306-task-0:/storage/LEARN_SNIPPETS/compare-kvcache-mem-dsv4/SGLANG_EXPERIMENT# 
+
+
+# Run after you have some generated tokens:
+curl -s "http://127.0.0.1:30000/model_info" |
+jq '
+  .kv_cache_info |
+  . + {
+    effective_bytes_per_full_token:
+      ((.kv_cache_size_bytes) / (.max_total_num_tokens))
+  }
+'
+
+# run bench
+source .venv-sglang/bin/activate
+MODEL=/models/DeepSeek-V4-Flash PORT=30000 ./bench_kv.sh

@@ -2,9 +2,9 @@
 
 python3 -m venv .venv-sglang
 source .venv-sglang/bin/activate
-
 python -m pip install -U pip setuptools wheel
 
+# --- git clone ---
 env \
   -u GIT_ASKPASS \
   -u GIT_ASKPASS_DOMAIN \
@@ -17,8 +17,16 @@ env \
 cd sglang
 git checkout a1fe4e30
 
+# --- install packages into env ---
 SGLANG_BUILD_RUST_EXTS=none pip install -e python
 
-
+# --- check versions ---
 python -c "import sglang; print(sglang.__version__)"
 python -m sglang.check_env
+
+# --- Old cubins from base image stayed installed. New FlashInfer rejects them. ---
+python -m pip uninstall -y flashinfer-cubin flashinfer-jit-cache
+flashinfer install-cubin-wheel
+flashinfer install-jit-cache-wheel   # optional, cuts JIT startup time
+python -m sglang.check_env | grep flashinfer
+

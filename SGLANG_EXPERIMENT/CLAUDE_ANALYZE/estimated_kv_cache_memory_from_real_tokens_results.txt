@@ -1,0 +1,27 @@
+==============================================================================
+PROVENANCE VERIFICATION -- every constant checked against source or live data
+==============================================================================
+[1] main KV entry:  computed=584  source assert (deepseek_v4_memory_pool.py:121-124)=584  MATCH
+[2] indexer entry:  computed=132  source formula (deepseek_v4_memory_pool.py:290-292, non-FP4 branch)=132  MATCH
+[3] swa_full_tokens_ratio:  measured in /metrics (1024)=0.0999888  assumed constant=0.1  diff=0.0000112 <= page-rounding bound 0.0000373  MATCH
+[4] bytes_per_full_token:  reproduced from scratch (pool_configurator.py:879-913)=7033.45  logged in sglang_dsv4.log=7033.45  MATCH
+==============================================================================
+
+Real per-token blended cost, from SGLang's own hardcoded DSV4 KV layout
+(deepseek_v4_memory_pool.py:106-124) amortized over each layer's real
+compression ratio in configs/deepseek-v4-flash.json:
+  ratio=0 (pure-SWA layers)        1168.000 bytes/entry -- bounded, excluded below, see swa_used_tokens
+  ratio=4                          3759.000 bytes/real-token
+  ratio=128                          91.250 bytes/real-token
+  total priced (classical pool only) 3850.250 bytes/real-token
+
+   context  kv_used_tokens  per_gpu_GiB  cluster_8gpu_GiB  swa_used_tokens
+      1024            1280       0.0046            0.0367              512
+      4096            4352       0.0156            0.1248              512
+      8192            8448       0.0303            0.2423              512
+     16384           16640       0.0597            0.4773              512
+     32768           33024       0.1184            0.9473             8448
+     65536           65792       0.2359            1.8873             8448
+    131072          131328       0.4709            3.7674             8448
+    262144          262400       0.9409            7.5274             8448
+    524288          524544       1.8809           15.0474             8448

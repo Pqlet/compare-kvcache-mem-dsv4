@@ -1,2 +1,4 @@
 SGLANG_EXPERIMENT/.venv-sglang
 SGLANG_EXPERIMENT/sglang_dsv4.log
+SGLANG_EXPERIMENT/.sglang_cache/
+SGLANG_EXPERIMENT/kv_bench_sglang/
