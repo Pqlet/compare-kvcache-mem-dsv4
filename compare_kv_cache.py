@@ -97,9 +97,9 @@ def estimate_v4_flash(
     window = int(config["sliding_window"])
 
     # SGLang DeepSeekV4SingleKVPool:
-    # non-RoPE FP8 + RoPE BF16 + one byte per 64-dim FP8 scale block,
+    # non-RoPE fp8 (see 2.3.4. in the paper) + RoPE BF16 + one byte per 64-dim FP8 scale block,
     # padded to eight scale bytes for DeepSeek-V4's 448 non-RoPE dims.
-    main_bytes_per_entry = nope_dim + rope_dim * 2 + nope_dim // 64 + 1
+    main_bytes_per_entry = nope_dim * 1 + rope_dim * 2 + nope_dim // 64 + 1
     # Paper uses FP4 indexer QK. SGLang stores two FP4 values per byte and
     # one byte scale per 32 dims.
     index_bytes_per_entry = index_dim // 2 + index_dim // 32
